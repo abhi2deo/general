@@ -38,7 +38,7 @@ public class atm{
             return;
         }
 
-        int amt
+        int amt;
 
 
     }
