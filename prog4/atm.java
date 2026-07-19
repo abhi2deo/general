@@ -38,8 +38,39 @@ public class atm{
             return;
         }
 
-        int amt
+        System.out.println("Enter option : \n1.Withdraw\n2.Deposit");
+        int choice = scn.nextInt();
 
+        if (choice == 1){
+            System.out.println("Enter amount to withdraw: ");
+            int amt = scn.nextInt();
+            if (acc.balance<amt || amt%100==0 || acc.balance-amt>1000 || amt>20000){
+                System.out.println("Error");
+                return;
+            }
+            else{
+                acc.balance = acc.balance - amt;
+                System.out.println("Successful!");
+                System.out.println("Available balance: "+acc.balance);
+            }
+        }
+        else if (choice == 2){
+            System.out.println("Enter deposit amount: ");
+            int amt = scn.nextInt();
+            if(amt <= 0){
+                System.out.println("Error");
+                return;
+            }
+            else{
+                acc.balance = acc.balance + amt;
+                System.out.println("Successful!");
+                System.out.println("Available balance: "+acc.balance);
+            }
+        }
+        else{
+            System.out.println("Invalid choice!");
+            return;
+        }
 
     }
 }
