@@ -34,7 +34,7 @@ public class atm{
             System.out.println("Welcome "+acc.name);
         }
         else{
-            System.out.println("Wrong pin, Exitin............");
+            System.out.println("Wrong pin, Exiting............");
             return;
         }
 
@@ -44,7 +44,7 @@ public class atm{
         if (choice == 1){
             System.out.println("Enter amount to withdraw: ");
             int amt = scn.nextInt();
-            if (acc.balance<amt || amt%100==0 || acc.balance-amt>1000 || amt>20000){
+            if (acc.balance<amt || amt%100!=0 || acc.balance-amt<1000 || amt>20000){
                 System.out.println("Error");
                 return;
             }
